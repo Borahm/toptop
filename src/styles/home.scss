@@ -1,0 +1,249 @@
+$green: rgb(192, 216, 192);
+$cream: rgb(245, 238, 220);
+$red: rgb(221, 74, 72);
+$orange: rgb(239, 141, 50);
+
+
+body { 
+  margin: 0px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  background-color: black;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.link{
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  font-weight: Regular 400;
+  font-size: 18px;
+  margin-top:10px;
+  margin-bottom: 50px;
+  color: #ef8d32;
+}
+
+h1 {
+
+  font-weight: bold;
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-bottom:0px;
+  margin-top: 10px;
+
+} 
+
+h2{
+  color: $orange;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.artistInfo-title{
+  margin-bottom: 20px;
+  line-height: 8vh;
+}
+
+p{
+  margin: 2px auto;
+  line-height: 25px;
+}
+
+.error {
+  margin: 100px auto;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  line-height: 20px;
+}
+
+.wait{
+  width: 90%;
+  height: 90%;
+  margin-bottom: 20px;
+}
+
+.container-artistInfo {
+  max-width: 600px;
+  text-align: center;
+  color: #4fd1c5;
+  margin: 0px;
+  margin-top:30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  line-height: 15px;
+  font-size: 15px;
+}
+
+.container{
+  color: #4fd1c5;
+  margin: 0px;
+  margin-top:30px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index:10;
+
+  
+
+
+
+  .object-container{
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .mid-section{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 150px;
+
+    img {
+      box-shadow: 0px 0px 70px 25px rgb(0 0 0 / 80%);
+    }
+  }
+
+  audio{
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .randomArtist-container .similarArtist-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+  }
+
+
+
+  audio::-webkit-media-controls-panel{
+    background-color: $green;
+    padding: 20px;
+  }
+  audio::-webkit-media-controls-mute-button {
+    background-color: $green;
+    border-radius: 50%;
+  }
+  audio::-webkit-media-controls-mute-button:hover {
+    background-color: rgba(129,230,217,1);
+  }
+
+  audio::-webkit-media-controls-play-button {
+    background-color: $green;
+    border-radius: 50%;
+  }
+  
+  audio::-webkit-media-controls-play-button:hover {
+    background-color: rgba(129,230,217,1);
+  }
+
+    button {
+      min-width: 300px;
+      min-height: 60px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+      color: #313133;
+      background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+      border: none;
+      border-radius: 1000px;
+      box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+      transition: all 0.3s ease-in-out 0s;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      padding: 10px;
+      margin-top:140px;
+      }
+    
+    button::before {
+    content: '';
+      border-radius: 1000px;
+      min-width: calc(300px + 12px);
+      min-height: calc(60px + 12px);
+      border: 6px solid #00FFCB;
+      box-shadow: 0 0 60px rgba(0,255,203,.64);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all .3s ease-in-out 0s;
+    }
+    
+    button:hover, button:focus {
+      color: #313133;
+      transform: translateY(-6px);
+    }
+    
+    button:hover::before, button:focus::before {
+      opacity: 1;
+    }
+    
+    button::after {
+      content: '';
+      width: 30px; height: 30px;
+      border-radius: 100%;
+      border: 6px solid #00FFCB;
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: ring 1.5s infinite;
+    }
+    
+    button:hover::after, button:focus::after {
+      animation: none;
+      display: none;
+    }
+    
+    @keyframes ring {
+      0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+      100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+      }
+    }
+
+    .bg-blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0px;
+      margin-top:-40px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100vw;
+      height: 100vh;
+      z-index:-1;
+      -webkit-transition: background-image 1s ease-in-out;
+transition: background-image 1s ease-in-out;
+      
+      filter: blur(20px);
+      opacity: 0.5;
+    }
+  
+}
